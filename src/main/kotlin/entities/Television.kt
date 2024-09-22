@@ -1,7 +1,7 @@
 package org.example.entities
 
 import org.example.constants.Code
-import org.example.models.Signal
+import org.example.objects.Air
 
 class Television(private val customCode: Code) {
     private val maxChannel: Int = 999
@@ -29,10 +29,11 @@ class Television(private val customCode: Code) {
         channel--
     }
 
-    fun receiveSignal(signal: Signal) {
-        if (signal.customCode != customCode) {
+    fun receiveSignal() {
+        if((Air.waves.peek()?.customCode ?: Code.NONE) != customCode){
             return
         }
+        val signal = Air.waves.remove()
         when (signal.dataCode) {
             Code.POWER -> turnOnOrOff()
             Code.UP -> channelUp()

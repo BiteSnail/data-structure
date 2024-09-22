@@ -33,7 +33,7 @@ class Television(private val customCode: Code) {
         if((Air.waves.peek()?.customCode ?: Code.NONE) != customCode){
             return
         }
-        val signal = Air.waves.remove()
+        val signal = Air.waves.peek()
         when (signal.dataCode) {
             Code.POWER -> turnOnOrOff()
             Code.UP -> channelUp()

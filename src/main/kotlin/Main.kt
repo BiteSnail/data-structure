@@ -8,5 +8,5 @@ fun main() {
 
     val payment = Payment.create(type)
 
-    payment?.pay(11111.0) ?: "잘못된 접근입니다."
+    payment.pay(11111.0)
 }

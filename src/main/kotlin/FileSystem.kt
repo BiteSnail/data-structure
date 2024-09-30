@@ -32,7 +32,8 @@ object FileSystem {
     }
 
     fun tree(node: FileMeta = rootNode, indentation: Int = DEFAULT_INDENTATION) {
-        println("${" ".repeat(indentation)}-${if (node.isDeleted) "Deleted:" else ""} ${if (node.isDirectory) "[${node.fileName}]" else node.fileName}")
+        TODO("아래 코드는 어떤 위치에 들어가야 할까요?")
+        //println("${" ".repeat(indentation)}-${if (node.isDeleted) "Deleted:" else ""} ${if (node.isDirectory) "[${node.fileName}]" else node.fileName}")
 
         node.children.forEach { child ->
             tree(child, indentation + indentation)
@@ -41,6 +42,9 @@ object FileSystem {
     }
 
     fun rm(node: FileMeta) {
+        TODO("아래 코드는 어떤 위치에 들어가야 할까요?")
+        //node.isDeleted = true
+
         if (node.isDeleted) {
             return
         }
@@ -50,6 +54,6 @@ object FileSystem {
                 rm(childNode)
             }
         }
-        node.isDeleted = true
+        
     }
 }

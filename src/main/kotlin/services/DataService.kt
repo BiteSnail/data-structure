@@ -1,8 +1,8 @@
 package org.example.services
 
-import org.example.storages.DatabaseStorage
+import org.example.storages.FileStorage
 
-class DataService(private val storage: DatabaseStorage) {
+class DataService(private val storage: FileStorage) {
     private fun validate(data: String) {
         if (data.isEmpty()) {
             throw IllegalArgumentException("데이터가 비었습니다.")

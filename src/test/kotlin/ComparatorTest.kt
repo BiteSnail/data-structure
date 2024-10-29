@@ -26,7 +26,7 @@ class ComparatorTest {
 
     @Test
     @DisplayName("ID를 기준으로 오름차순")
-    fun sortByIdDescendingTest() {
+    fun sortByIdAscendingTest() {
         var users = createUsers(100)
 
         //Hint. sortedBy()의 매개변수는?

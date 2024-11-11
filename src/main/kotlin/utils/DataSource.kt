@@ -4,6 +4,7 @@ import java.sql.Connection
 import java.sql.DriverManager
 
 object DataSource {
-    val connection: Connection = DriverManager.getConnection("jdbc:sqlite:test.db")
-
+    fun getConnection(): Connection {
+        return DriverManager.getConnection("jdbc:sqlite:test.db")
+    }
 }
